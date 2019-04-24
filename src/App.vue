@@ -1,29 +1,47 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <HeaderSp />
+    <!-- <LowHeader /> -->
     <router-view/>
+    <Footer />
   </div>
 </template>
 
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import HeaderSp from '@/components/HeaderSp.vue';
+import LowHeader from '@/components/LowHeader.vue';
+import Footer from '@/components/Footer.vue';
+
+@Component({
+  components: {
+    HeaderSp,
+    LowHeader,
+    Footer,
+  },
+})
+export default class Home extends Vue {}
+</script>
+
 <style lang="scss">
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>

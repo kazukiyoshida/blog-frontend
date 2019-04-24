@@ -1,21 +1,19 @@
 <template lang="pug">
-  div.home
+  div.post
     div.header-space
     <TopPost />
-    <TopPost />
-    <TopPost />
-    <TopPost />
-    <TopPost />
-    <TopPost />
+    <PostContent />
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import TopPost from '@/components/TopPost.vue';
+import PostContent from '@/components/PostContent.vue';
 
 @Component({
   components: {
     TopPost,
+    PostContent,
   },
 })
 export default class Home extends Vue {}
